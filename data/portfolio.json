@@ -1,0 +1,112 @@
+{
+  "accounts": [
+    {
+      "name": "Coinbase",
+      "holdings": [
+        {
+          "category": "Cash/Safe",
+          "currency": "USD",
+          "amount": 379.20,
+          "value": 379.20
+        },
+        {
+          "category": "Cash/Safe",
+          "currency": "USDC",
+          "amount": 53.13,
+          "value": 53.13
+        },
+        {
+          "category": "Speculative",
+          "currency": "ETH",
+          "amount": 1.2,
+          "value": 2200
+        }
+      ]
+    },
+    {
+      "name": "Lattice",
+      "holdings": [
+        {
+          "category": "Cash/Safe",
+          "currency": "USDC",
+          "amount": 532.12,
+          "value": 532.12
+        },
+        {
+          "category": "Speculative",
+          "currency": "ETH",
+          "amount": 0.37,
+          "value": 423.12
+        }
+      ]
+    },
+    {
+      "name": "Uniswap",
+      "holdings": [
+        {
+          "category": "Cash/Safe",
+          "currency": "USDC",
+          "amount": 60000,
+          "value": 60000
+        },
+        {
+          "category": "Speculative",
+          "currency": "ETH",
+          "amount": 5.7,
+          "value": 11802
+        }
+      ]
+    },
+    {
+      "name": "123 Sycamore Ct",
+      "holdings": [
+        {
+          "category": "Real Estate",
+          "currency": "USD",
+          "amount": 120000,
+          "value": 120000
+        }
+      ]
+    },
+    {
+      "name": "Acme Mortgage Lender",
+      "holdings": [
+        {
+          "category": "Real Estate",
+          "currency": "USD",
+          "amount": -300000
+        }
+      ]
+    },
+    {
+      "name": "Vanguard",
+      "holdings": [
+        {
+          "category": "Index Funds (Retirement)",
+          "currency": "USD",
+          "amount": 310000
+        }
+      ]
+    },
+    {
+      "name": "Credit Card",
+      "holdings": [
+        {
+          "category": "Cash/Safe",
+          "currency": "USD",
+          "amount": -14000
+        }
+      ]
+    },
+    {
+      "name": "Notes Payable",
+      "holdings": [
+        {
+          "category": "Cash/Safe",
+          "currency": "USD",
+          "amount": -150000
+        }
+      ]
+    }
+  ]
+}
