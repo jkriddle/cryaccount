@@ -1,5 +1,5 @@
 <template>
-{{ value().toLocaleString() }}
+{{ value() }}
 </template>
 
 <script>
@@ -25,6 +25,7 @@ export default {
   name: 'Holding',
   props: {
     account: Object,
+    fund: Object,
     portfolio: Object,
     currency: String,
     precision: {
@@ -36,7 +37,20 @@ export default {
   methods: {
     value() {
         var total = 0;
-        if (this.portfolio != null) {
+
+        if (this.fund != null) {
+          // Display total for fund
+          for(var i = 0; i < this.portfolio.accounts.length; i++) {
+            var account = this.portfolio.accounts[i];
+            for(var j = 0; j < account.holdings.length; j++) {
+              var holding = account.holdings[j];
+              var accountFund = holding.fund;
+              if (accountFund == this.fund.name) {
+                total += holding.value;
+              }
+            }
+          }
+        } else if (this.portfolio != null) {
           // Display total for portfolio
           for(var i = 0; i < this.portfolio.accounts.length; i++) {
             var account = this.portfolio.accounts[i];

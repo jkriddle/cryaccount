@@ -20,7 +20,7 @@
     <td></td>
     <td></td>
     <td></td>
-    <td>{{fund.value}}</td>
+    <td><Holding :portfolio="portfolio" :fund="fund" /></td>
     <td></td>
   </tr>
 </tbody>

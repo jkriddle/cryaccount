@@ -28,20 +28,20 @@
         {
           "fund": "Cash/Safe",
           "currency": "USD",
-          "amount": 379.20,
-          "value": 379.20
+          "amount": 100.10,
+          "value": 100.10
         },
         {
           "fund": "Cash/Safe",
           "currency": "USDC",
-          "amount": 53.13,
-          "value": 53.13
+          "amount": 200.50,
+          "value": 200.50
         },
         {
           "fund": "Speculative",
           "currency": "ETH",
-          "amount": 1.2,
-          "value": 2200
+          "amount": 30.3034,
+          "value": 60000.20
         }
       ]
     },
@@ -51,8 +51,8 @@
         {
           "fund": "Cash/Safe",
           "currency": "USDC",
-          "amount": 532.12,
-          "value": 532.12
+          "amount": 700.60,
+          "value": 700.60
         },
         {
           "fund": "Speculative",
