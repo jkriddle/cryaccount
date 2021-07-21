@@ -17,7 +17,7 @@
     <td>
       {{ fund.name }}
     </td>
-    <td></td>
+    <td>{{ fund.target }}</td>
     <td></td>
     <td><Holding :portfolio="portfolio" :fund="fund" display="percent" /></td>
     <td><Holding :portfolio="portfolio" :fund="fund" display="value" /></td>
