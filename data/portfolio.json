@@ -1,22 +1,44 @@
 {
+  "funds": [
+    {
+      "name": "Cash/Safe",
+      "target": 0.50,
+      "value": 0
+    },
+    {
+      "name": "Index Funds (Retirement)",
+      "target": 0.15,
+      "value": 0
+    },
+    {
+      "name": "Speculative",
+      "target": 0.25,
+      "value": 0
+    },
+    {
+      "name": "Real Estate",
+      "target": 0.10,
+      "value": 0
+    }
+  ],
   "accounts": [
     {
       "name": "Coinbase",
       "holdings": [
         {
-          "category": "Cash/Safe",
+          "fund": "Cash/Safe",
           "currency": "USD",
           "amount": 379.20,
           "value": 379.20
         },
         {
-          "category": "Cash/Safe",
+          "fund": "Cash/Safe",
           "currency": "USDC",
           "amount": 53.13,
           "value": 53.13
         },
         {
-          "category": "Speculative",
+          "fund": "Speculative",
           "currency": "ETH",
           "amount": 1.2,
           "value": 2200
@@ -27,13 +49,13 @@
       "name": "Lattice",
       "holdings": [
         {
-          "category": "Cash/Safe",
+          "fund": "Cash/Safe",
           "currency": "USDC",
           "amount": 532.12,
           "value": 532.12
         },
         {
-          "category": "Speculative",
+          "fund": "Speculative",
           "currency": "ETH",
           "amount": 0.37,
           "value": 423.12
@@ -44,13 +66,13 @@
       "name": "Uniswap",
       "holdings": [
         {
-          "category": "Cash/Safe",
+          "fund": "Cash/Safe",
           "currency": "USDC",
           "amount": 60000,
           "value": 60000
         },
         {
-          "category": "Speculative",
+          "fund": "Speculative",
           "currency": "ETH",
           "amount": 5.7,
           "value": 11802
@@ -61,7 +83,7 @@
       "name": "123 Sycamore Ct",
       "holdings": [
         {
-          "category": "Real Estate",
+          "fund": "Real Estate",
           "currency": "USD",
           "amount": 120000,
           "value": 120000
@@ -72,9 +94,10 @@
       "name": "Acme Mortgage Lender",
       "holdings": [
         {
-          "category": "Real Estate",
+          "fund": "Real Estate",
           "currency": "USD",
-          "amount": -300000
+          "amount": -300000,
+          "value": -300000
         }
       ]
     },
@@ -82,9 +105,10 @@
       "name": "Vanguard",
       "holdings": [
         {
-          "category": "Index Funds (Retirement)",
+          "fund": "Index Funds (Retirement)",
           "currency": "USD",
-          "amount": 310000
+          "amount": 310000,
+          "value": 310000
         }
       ]
     },
@@ -92,9 +116,10 @@
       "name": "Credit Card",
       "holdings": [
         {
-          "category": "Cash/Safe",
+          "fund": "Cash/Safe",
           "currency": "USD",
-          "amount": -14000
+          "amount": -14000,
+          "value": -14000
         }
       ]
     },
@@ -102,9 +127,10 @@
       "name": "Notes Payable",
       "holdings": [
         {
-          "category": "Cash/Safe",
+          "fund": "Cash/Safe",
           "currency": "USD",
-          "amount": -150000
+          "amount": 150000,
+          "value": 150000
         }
       ]
     }
