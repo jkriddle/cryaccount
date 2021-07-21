@@ -2,9 +2,11 @@
 </template>
 
 <script>
+import Price from '../mixins/Price.vue';
 
 export default {
   name: 'Holding',
+  mixins: [ Price ],
   props: {
     portfolio: Object,
     target: Number,
@@ -17,16 +19,17 @@ export default {
   methods: {
     getHoldingTotal(holding, currency, display) {
       var total : decimal = 0;
+
       if (currency == null || holding.currency == currency) {
         if (holding.currency == "ETH") {
           if (currency == null || display == "value") {
-            total += holding.value;
+            total += holding.amount * this.getPrice(holding.currency);
           }
           else {
             total += holding.amount;
           }
         } else {
-          total += holding.value;
+          total += holding.amount * this.getPrice(holding.currency);
         }
       }
       return total;

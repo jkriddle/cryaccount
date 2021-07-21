@@ -60,6 +60,7 @@
       <th class="text-end" scope="col">USDC</th>
       <th class="text-end" scope="col">Value (Other)</th>
       <th class="text-end" scope="col">Total</th>
+      <th>Comment</th>
     </tr>
   </thead>
   <tfoot>
@@ -70,6 +71,7 @@
       <th class="text-end" scope="col"><Account :portfolio="portfolio" currency="USDC" /></th>
       <th class="text-end" scope="col"><Account :portfolio="portfolio" currency="Other" /></th>
       <th class="text-end" scope="col"><Account :portfolio="portfolio" /></th>
+      <th></th>
     </tr>
   </tfoot>
 <tbody>
@@ -82,6 +84,7 @@
     <td class="text-end"><Account :account="account" currency="USDC" /></td>
     <td class="text-end"><Account :account="account" currency="Other" /></td>
     <th class="text-end" scope="row"><Account :account="account" /></th>
+    <td class="fst-italic">{{ account.comment }}</td>
   </tr>
 </tbody>
 </table>
