@@ -12,16 +12,26 @@
       <th>Diff $</th>
     </tr>
   </thead>
+  <tfoot>
+  <tr>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th><Fund :portfolio="portfolio" :fund="fund" display="value" /></th>
+    <th></th>
+  </tr>
+  </tfoot>
 <tbody>
   <tr v-for="fund in funds">
     <td>
       {{ fund.name }}
     </td>
     <td>{{ fund.target }}</td>
-    <td></td>
-    <td><Holding :portfolio="portfolio" :fund="fund" display="percent" /></td>
-    <td><Holding :portfolio="portfolio" :fund="fund" display="value" /></td>
-    <td></td>
+    <td><Fund :portfolio="portfolio" :fund="fund" :target="fund.target" display="value" /></td>
+    <td><Fund :portfolio="portfolio" :fund="fund" display="percent" /></td>
+    <td><Fund :portfolio="portfolio" :fund="fund" display="value" /></td>
+    <td><Fund :portfolio="portfolio" :fund="fund" :target="fund.target" display="diff" /></td>
   </tr>
 </tbody>
 </table>
@@ -43,11 +53,11 @@
   <tfoot>
   <tr>
     <th>Total</th>
-    <th><Holding :portfolio="portfolio" currency="ETH" :precision="4" /></th>
-    <th><Holding :portfolio="portfolio" currency="USD" /></th>
-    <th><Holding :portfolio="portfolio" currency="USDC" /></th>
-    <th><Holding :portfolio="portfolio" currency="Other" /></th>
-    <th><Holding :portfolio="portfolio" /></th>
+    <th><Account :portfolio="portfolio" currency="ETH" :precision="4" /></th>
+    <th><Account :portfolio="portfolio" currency="USD" /></th>
+    <th><Account :portfolio="portfolio" currency="USDC" /></th>
+    <th><Account :portfolio="portfolio" currency="Other" /></th>
+    <th><Account :portfolio="portfolio" /></th>
   </tr>
   </tfoot>
 <tbody>
@@ -55,11 +65,11 @@
     <td>
       {{ account.name }}
     </td>
-    <td><Holding :account="account" currency="ETH" :precision="4" /></td>
-    <td><Holding :account="account" currency="USD" /></td>
-    <td><Holding :account="account" currency="USDC" /></td>
-    <td><Holding :account="account" currency="Other" /></td>
-    <td><Holding :account="account" /></td>
+    <td><Account :account="account" currency="ETH" :precision="4" /></td>
+    <td><Account :account="account" currency="USD" /></td>
+    <td><Account :account="account" currency="USDC" /></td>
+    <td><Account :account="account" currency="Other" /></td>
+    <td><Account :account="account" /></td>
   </tr>
 </tbody>
 </table>
@@ -67,6 +77,8 @@
 
 <script>
 import portfolio from '../../data/portfolio.json';
+import Fund from './Fund.vue'
+import Account from './Account.vue'
 
 var funds = portfolio.funds;
 
@@ -86,12 +98,12 @@ for(var i = 0; i < portfolio.accounts.length; i++) {
   }
 }
 
-import Holding from './Holding.vue'
 
 export default {
   name: 'Portfolio',
   components: {
-    Holding
+    Account,
+    Fund
   },
   data() {
     return {
