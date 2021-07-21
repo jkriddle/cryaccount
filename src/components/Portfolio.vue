@@ -19,8 +19,8 @@
     </td>
     <td></td>
     <td></td>
-    <td></td>
-    <td><Holding :portfolio="portfolio" :fund="fund" /></td>
+    <td><Holding :portfolio="portfolio" :fund="fund" display="percent" /></td>
+    <td><Holding :portfolio="portfolio" :fund="fund" display="value" /></td>
     <td></td>
   </tr>
 </tbody>

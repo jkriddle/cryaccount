@@ -40,6 +40,7 @@ export default {
 
         if (this.fund != null) {
           // Display total for fund
+          var grandTotal = 0;
           for(var i = 0; i < this.portfolio.accounts.length; i++) {
             var account = this.portfolio.accounts[i];
             for(var j = 0; j < account.holdings.length; j++) {
@@ -48,7 +49,11 @@ export default {
               if (accountFund == this.fund.name) {
                 total += holding.value;
               }
+              grandTotal += holding.value;
             }
+          }
+          if (this.display == "percent") {
+            total = total / grandTotal * 100;
           }
         } else if (this.portfolio != null) {
           // Display total for portfolio
