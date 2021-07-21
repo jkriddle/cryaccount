@@ -1,25 +1,27 @@
 <template>
 <h3>Funds</h3>
 
-<table class="table table-sm table-bordered">
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Fund</th>
-      <th>Target %</th>
-      <th>Target $</th>
-      <th>Actual %</th>
-      <th>Actual $</th>
-      <th>Diff $</th>
+      <th scope="col">Fund</th>
+      <th class="text-end" scope="col">Target %</th>
+      <th class="text-end" scope="col">Target $</th>
+      <th class="text-end" scope="col">Actual %</th>
+      <th class="text-end" scope="col">Actual $</th>
+      <th  class="text-end"scope="col">Diff $</th>
     </tr>
   </thead>
   <tfoot>
   <tr>
-    <th>Total</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th><Fund :portfolio="portfolio" :fund="fund" display="value" /></th>
-    <th></th>
+    <th scope="col">Total</th>
+    <th class="text-end" scope="col"></th>
+    <th class="text-end" scope="col"></th>
+    <th class="text-end" scope="col"></th>
+    <th class="text-end" scope="col">
+      <Fund :portfolio="portfolio" :fund="fund" display="value" />
+    </th>
+    <th class="text-end" scope="col"></th>
   </tr>
   </tfoot>
 <tbody>
@@ -27,49 +29,59 @@
     <td>
       {{ fund.name }}
     </td>
-    <td>{{ fund.target }}</td>
-    <td><Fund :portfolio="portfolio" :fund="fund" :target="fund.target" display="value" /></td>
-    <td><Fund :portfolio="portfolio" :fund="fund" display="percent" /></td>
-    <td><Fund :portfolio="portfolio" :fund="fund" display="value" /></td>
-    <td><Fund :portfolio="portfolio" :fund="fund" :target="fund.target" display="diff" /></td>
+    <td class="text-end">
+      {{ fund.target }}
+    </td>
+    <td class="text-end">
+      <Fund :portfolio="portfolio" :fund="fund" :target="fund.target" display="value" />
+    </td>
+    <td class="text-end">
+      <Fund :portfolio="portfolio" :fund="fund" display="percent" />
+    </td>
+    <td class="text-end">
+      <Fund :portfolio="portfolio" :fund="fund" display="value" />
+    </td>
+    <td class="text-end">
+      <Fund :portfolio="portfolio" :fund="fund" :target="fund.target" display="diff" />
+    </td>
   </tr>
 </tbody>
 </table>
 
 
-  <h3>Accounts</h3>
+<h3>Accounts</h3>
   
-<table class="table table-sm table-bordered">
+<table class="table table-bordered table-hover table-responsive">
   <thead>
     <tr>
-      <th>Wallet/Exchange</th>
-      <th>ETH</th>
-      <th>USD</th>
-      <th>USDC</th>
-      <th>Value (Other)</th>
-      <th>Total</th>
+      <th scope="col">Account</th>
+      <th class="text-end" scope="col">ETH</th>
+      <th class="text-end" scope="col">USD</th>
+      <th class="text-end" scope="col">USDC</th>
+      <th class="text-end" scope="col">Value (Other)</th>
+      <th class="text-end" scope="col">Total</th>
     </tr>
   </thead>
   <tfoot>
-  <tr>
-    <th>Total</th>
-    <th><Account :portfolio="portfolio" currency="ETH" :precision="4" /></th>
-    <th><Account :portfolio="portfolio" currency="USD" /></th>
-    <th><Account :portfolio="portfolio" currency="USDC" /></th>
-    <th><Account :portfolio="portfolio" currency="Other" /></th>
-    <th><Account :portfolio="portfolio" /></th>
-  </tr>
+    <tr>
+      <th scope="col">Total</th>
+      <th class="text-end" scope="col"><Account :portfolio="portfolio" currency="ETH" :precision="4" /></th>
+      <th class="text-end" scope="col"><Account :portfolio="portfolio" currency="USD" /></th>
+      <th class="text-end" scope="col"><Account :portfolio="portfolio" currency="USDC" /></th>
+      <th class="text-end" scope="col"><Account :portfolio="portfolio" currency="Other" /></th>
+      <th class="text-end" scope="col"><Account :portfolio="portfolio" /></th>
+    </tr>
   </tfoot>
 <tbody>
   <tr v-for="account in portfolio.accounts">
     <td>
       {{ account.name }}
     </td>
-    <td><Account :account="account" currency="ETH" :precision="4" /></td>
-    <td><Account :account="account" currency="USD" /></td>
-    <td><Account :account="account" currency="USDC" /></td>
-    <td><Account :account="account" currency="Other" /></td>
-    <td><Account :account="account" /></td>
+    <td class="text-end"><Account :account="account" currency="ETH" :precision="4" /></td>
+    <td class="text-end"><Account :account="account" currency="USD" /></td>
+    <td class="text-end"><Account :account="account" currency="USDC" /></td>
+    <td class="text-end"><Account :account="account" currency="Other" /></td>
+    <th class="text-end" scope="row"><Account :account="account" /></th>
   </tr>
 </tbody>
 </table>

@@ -1,5 +1,4 @@
 <template>
-{{ value() }}
 </template>
 
 <script>
@@ -34,7 +33,6 @@ export default {
     },
     getPortfolioTotal() {
       var total : decimal = 0;
-      // Display total for portfolio
       for(var i = 0; i < this.portfolio.accounts.length; i++) {
         var account = this.portfolio.accounts[i];
         for(var j = 0; j < account.holdings.length; j++) {
@@ -50,7 +48,11 @@ export default {
         maximumFractionDigits: this.precision
       };
 
-      return value.toLocaleString('en', localeOptions);
+      var formatted = value.toLocaleString('en', localeOptions);
+
+      // Replace negative symbol with parenthesis
+      return value < 0 ? '(' + formatted.slice(1) + ')' : formatted;
+
     }
   }
 };
