@@ -57,7 +57,7 @@
         {
           "fund": "Speculative",
           "currency": "ETH",
-          "amount": 0.37,
+          "amount": 0.37323,
           "value": 423.12
         }
       ]
@@ -95,7 +95,7 @@
       "holdings": [
         {
           "fund": "Real Estate",
-          "currency": "USD",
+          "currency": "Other",
           "amount": -300000,
           "value": -300000
         }
@@ -106,7 +106,7 @@
       "holdings": [
         {
           "fund": "Index Funds (Retirement)",
-          "currency": "USD",
+          "currency": "Other",
           "amount": 310000,
           "value": 310000
         }

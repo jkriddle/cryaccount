@@ -1,6 +1,7 @@
 <template>
 <h3>Funds</h3>
-<table>
+
+<table class="table table-sm table-bordered">
   <thead>
     <tr>
       <th>Fund</th>
@@ -28,7 +29,7 @@
 
   <h3>Accounts</h3>
   
-<table>
+<table class="table table-sm table-bordered">
   <thead>
     <tr>
       <th>Wallet/Exchange</th>
@@ -39,16 +40,26 @@
       <th>Total</th>
     </tr>
   </thead>
+  <tfoot>
+  <tr>
+    <th>Total</th>
+    <th><Holding :portfolio="portfolio" currency="ETH" :precision="4" /></th>
+    <th><Holding :portfolio="portfolio" currency="USD" /></th>
+    <th><Holding :portfolio="portfolio" currency="USDC" /></th>
+    <th><Holding :portfolio="portfolio" currency="Other" /></th>
+    <th><Holding :portfolio="portfolio" /></th>
+  </tr>
+  </tfoot>
 <tbody>
   <tr v-for="account in portfolio.accounts">
     <td>
       {{ account.name }}
     </td>
-    <td><Value :account="account" currency="ETH" /></td>
-    <td><Value :account="account" currency="USD" /></td>
-    <td><Value :account="account" currency="USDC" /></td>
-    <td><Value :account="account" currency="Other" /></td>
-    <td>{{account.value}}</td>
+    <td><Holding :account="account" currency="ETH" :precision="4" /></td>
+    <td><Holding :account="account" currency="USD" /></td>
+    <td><Holding :account="account" currency="USDC" /></td>
+    <td><Holding :account="account" currency="Other" /></td>
+    <td><Holding :account="account" /></td>
   </tr>
 </tbody>
 </table>
@@ -75,12 +86,12 @@ for(var i = 0; i < portfolio.accounts.length; i++) {
   }
 }
 
-import Value from './Value.vue'
+import Holding from './Holding.vue'
 
 export default {
   name: 'Portfolio',
   components: {
-    Value
+    Holding
   },
   data() {
     return {
